@@ -6,7 +6,7 @@ import { connect } from 'cloudflare:sockets';
 // [Windows] Press "Win + R", input cmd and run:  Powershell -NoExit -Command "[guid]::NewGuid()"
 let userID = '47fb0431-0383-4e50-9865-aae363465f0a';
 
-const proxyIPs = ['45.194.25.18'];
+const proxyIPs = ["15.204.225.243","159.223.68.99","8.222.244.123","3.227.85.44","47.245.38.149","170.106.35.96","199.119.202.99","154.17.10.68","156.146.53.82","107.150.38.251","193.118.46.234","23.92.20.47","104.28.217.50","38.60.204.33","13.56.19.49","114.127.0.10","114.120.6.129","114.120.6.1","114.120.6.255","94.241.174.53","185.92.221.70","92.119.90.52","45.63.117.200","192.248.188.172","195.201.231.143","192.248.190.56","80.240.18.149","80.240.26.247","64.176.220.22","104.207.132.10","66.42.78.44","207.246.122.137","45.32.128.48","104.238.156.98","149.28.62.21"];
 
 let proxyIP = proxyIPs[Math.floor(Math.random() * proxyIPs.length)];
 
@@ -726,12 +726,6 @@ function getVLESSConfig(userIDs, hostName) {
 	let output = [];
 	let header = [];
 	const clash_link = `https://subconverter.do.xn--b6gac.eu.org/sub?target=clash&url=https://${hostName}/sub/${userIDArray[0]}?format=clash&insert=false&emoji=true&list=false&tfo=false&scv=true&fdn=false&sort=false&new_name=true`;
-	header.push(`\n<p align="center"><img src="https://cloudflare-ipfs.com/ipfs/bafybeigd6i5aavwpr6wvnwuyayklq3omonggta4x2q7kpmgafj357nkcky" alt="图片描述" style="margin-bottom: -50px;">`);
-	header.push(`\n<b style=" font-size: 15px;" >Welcome! This function generates configuration for VLESS protocol. If you found this useful, please check our GitHub project for more:</b>\n`);
-	header.push(`<b style=" font-size: 15px;" >欢迎！这是生成 VLESS 协议的配置。如果您发现这个项目很好用，请查看我们的 GitHub 项目给我一个star：</b>\n`);
-	header.push(`\n<a href="https://github.com/3Kmfi6HP/EDtunnel" target="_blank">EDtunnel - https://github.com/3Kmfi6HP/EDtunnel</a>\n`);
-	header.push(`\n<iframe src="https://ghbtns.com/github-btn.html?user=USERNAME&repo=REPOSITORY&type=star&count=true&size=large" frameborder="0" scrolling="0" width="170" height="30" title="GitHub"></iframe>\n\n`.replace(/USERNAME/g, "3Kmfi6HP").replace(/REPOSITORY/g, "EDtunnel"));
-	header.push(`<a href="//${hostName}/sub/${userIDArray[0]}" target="_blank">VLESS 节点订阅连接</a>\n<a href="clash://install-config?url=${encodeURIComponent(clash_link)}" target="_blank">Clash 节点订阅连接</a>\n<a href="${clash_link}" target="_blank">Clash 节点订阅连接2</a></p>\n`);
 	header.push(``);
 
 	// Generate output string for each userID
@@ -747,7 +741,7 @@ function getVLESSConfig(userIDs, hostName) {
 	// HTML Head with CSS
 	const htmlHead = `
     <head>
-        <title>EDtunnel: VLESS configuration</title>
+        <title>KuyShare - VLESS configuration</title>
         <meta name="description" content="This is a tool for generating VLESS protocol configurations. Give us a star on GitHub https://github.com/3Kmfi6HP/EDtunnel if you found it useful!">
 		<meta name="keywords" content="EDtunnel, cloudflare pages, cloudflare worker, severless">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -869,4 +863,3 @@ function createVLESSSub(userID_Path, hostName) {
 	// Join output with newlines
 	return output.join('\n');
 }
-
